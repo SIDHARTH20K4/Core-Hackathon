@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
@@ -5,6 +6,7 @@ import HeroSection from "@/components/hero-section"
 import FeaturesSection from "@/components/features-section"
 import FaqSection from "@/components/faq-section"
 import Footer from "@/components/footer"
+import ColorTrading from '@/components/colorTrading'
 
 export default function Home() {
   return (
@@ -48,6 +50,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <FeaturesSection />
+        <ColorTrading />
         <FaqSection />
       </main>
       <Footer />
