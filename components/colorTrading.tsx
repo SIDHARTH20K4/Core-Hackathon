@@ -2,14 +2,11 @@
 import React, { useState, useEffect } from 'react';
 
 const ColorTradingGame = () => {
-  // Dummy account data
   const [account, setAccount] = useState({
-    userId: "0x3a2DeF83C82D3EEa729EF62D732f18Ac61F2a05C",
+    userId: "0x3a2DeF83C82D3EEa729EF62D\]][[732f18Ac61F2a05C",
     balance: 100000,
     walletAddress: "0x3a2DeF83C82D3EEa729EF62D732f18Ac61F2a05C",
   });
-
-  // Game state
   const [gameActive, setGameActive] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60);
   const [isFrozen, setIsFrozen] = useState(false);
@@ -65,7 +62,7 @@ const ColorTradingGame = () => {
     setColorHistory(prev => [...prev, {
       current: currentColor,
       next: nextColor,
-      bet: bet,
+       bet: bet,
       direction: direction
     }]);
     

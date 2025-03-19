@@ -1,16 +1,23 @@
-"use client"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ModeToggle } from "@/components/mode-toggle"
-import HeroSection from "@/components/hero-section"
-import FeaturesSection from "@/components/features-section"
-import FaqSection from "@/components/faq-section"
-import Footer from "@/components/footer"
-import ColorTrading from '@/components/colorTrading'
+"use client";
+
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
+import HeroSection from "@/components/hero-section";
+import FeaturesSection from "@/components/features-section";
+import FaqSection from "@/components/faq-section";
+import Footer from "@/components/footer";
+import ColorTrading from "@/components/colorTrading";
+import { ConnectWallet } from "@thirdweb-dev/react";
+import { AuthRedirect } from "@/components/auth/AuthRedirect";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
+      {/* Redirect authenticated users to /dashboard */}
+      <AuthRedirect whenAuthenticated="/dashboard" />
+
+      {/* Navbar */}
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-6 md:gap-10">
@@ -41,20 +48,26 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-2">
             <ModeToggle />
-            <Button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700">
-              Connect Wallet
-            </Button>
+            {/* Wallet Connection Button */}
+            <ConnectWallet 
+              theme="dark" 
+              btnTitle="Connect Wallet"
+              className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700"
+            />
           </div>
         </div>
       </header>
+
+      {/* Main Content */}
       <main className="flex-1">
         <HeroSection />
         <FeaturesSection />
         <ColorTrading />
         <FaqSection />
       </main>
+
+      {/* Footer */}
       <Footer />
     </div>
-  )
+  );
 }
-
