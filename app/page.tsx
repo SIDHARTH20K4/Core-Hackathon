@@ -5,7 +5,12 @@ import HeroSection from "@/components/hero-section"
 import FeaturesSection from "@/components/features-section"
 import FaqSection from "@/components/faq-section"
 import Footer from "@/components/footer"
-
+import { ConnectButton } from "thirdweb/react";
+import { client } from "./client";
+import { useActiveAccount } from "thirdweb/react";
+import { defineChain } from "thirdweb/chains";
+const chain = defineChain(1114);
+const account = useActiveAccount();
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -39,9 +44,14 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-2">
             <ModeToggle />
-            <Button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700">
-              Connect Wallet
-            </Button>
+            <ConnectButton 
+        chain={chain}
+        key="connect-button"
+        client={client}
+        onConnect={() => {
+          console.log("Wallet connected...");
+        }}
+      />
           </div>
         </div>
       </header>
