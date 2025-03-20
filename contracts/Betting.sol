@@ -31,4 +31,4 @@ contract Betting {
     receive() external payable {}
 }
 
-// Contract Address = 0x31aa6880d8c7ab269c6923114b4981b00723dcf9
+// ContractAddress = 0x31aa6880d8c7ab269c6923114b4981b00723dcf9
