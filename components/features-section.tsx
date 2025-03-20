@@ -84,14 +84,12 @@ export default function FeaturesSection() {
             ease: "power2.out"
           });
           
-          // Animate the title
           gsap.to(ref.current.querySelector(".step-title"), {
             color: "#7c3aed",
             duration: 0.5,
             ease: "power2.out"
           });
           
-          // Update the progress line
           gsap.to(".progress-line", {
             height: `${(index + 1) / steps.length * 100}%`,
             duration: 0.5,

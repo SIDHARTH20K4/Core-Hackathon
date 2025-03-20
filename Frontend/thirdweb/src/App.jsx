@@ -1,35 +1,15 @@
-// src/App.js
-// import { ThirdwebProvider } from "thirdweb/react";
-// import { CoreTestnet } from "./chain";
-// import ConnectWalletButton from "./ConnectWalletButton.jsx";
+import { ConnectButton } from "thirdweb/react";
 import { createThirdwebClient } from "thirdweb";
-import {  ConnectButton } from "thirdweb/react";
 
-function App() {
-  const client = createThirdwebClient({ clientId:"09b90d9da477681ddcad30ee8de156fd" });
+export default function ConnectWalletButton() {
+  const client = createThirdwebClient({
+    clientId: "09b90d9da477681ddcad30ee8de156fd"
+  });
 
   return (
-   
-  <>
-    <ConnectButton client={client} />
-
-    
-<h1>Welcome to My DApp</h1></>
-
-
-      
+    <ConnectButton 
+      client={client}
+      className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+    />
   );
 }
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100vh",
-    backgroundColor: "#f0f0f0",
-  },
-};
-
-export default App;
