@@ -6,7 +6,7 @@ import FeaturesSection from "@/components/features-section"
 import FaqSection from "@/components/faq-section"
 import Footer from "@/components/footer"
 import { ConnectButton } from "thirdweb/react";
-import { client } from "./client";
+import { client }  from "thirdweb/client";
 import { useActiveAccount } from "thirdweb/react";
 import { defineChain } from "thirdweb/chains";
 const chain = defineChain(1114);
@@ -51,6 +51,7 @@ export default function Home() {
         onConnect={() => {
           console.log("Wallet connected...");
         }}
+        
       />
           </div>
         </div>
